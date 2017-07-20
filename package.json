@@ -1,0 +1,33 @@
+{
+  "name": "precompiler",
+  "version": "0.0.1",
+  "description": "precompile kinds of html template into JavaScript source code",
+  "repository": "git@github.com:JounQin/precompiler.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "files": [
+    "dist/**.js"
+  ],
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "dev": "rollup -c --watch",
+    "lint": "eslint . --max-warnings=10",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-0": "^6.24.1",
+    "cross-env": "^5.0.1",
+    "eslint": "^4.2.0",
+    "eslint-config-1stg": "^1.0.1",
+    "jest": "^20.0.4",
+    "rollup": "^0.45.2",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-watch": "^4.3.1",
+    "yargs": "^8.0.2"
+  }
+}
