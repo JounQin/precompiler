@@ -1,7 +1,10 @@
 {
   "name": "precompiler",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "precompile kinds of html template into JavaScript source code",
+  "main": "dist/precompiler.common.js",
+  "module": "dist/precompiler.esm.js",
+  "unpkg": "dist/precompiler.js",
   "repository": "git@github.com:JounQin/precompiler.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
@@ -9,13 +12,17 @@
     "dist/**.js"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production rollup -c",
-    "dev": "rollup -c --watch",
+    "build:umd": "rollup -c --format umd",
+    "build:cjs": "rollup -c --format cjs",
+    "build:es": "rollup -c --format es",
+    "build": "npm run build:umd && npm run build:cjs && npm run build:es",
     "lint": "eslint . --max-warnings=10",
     "lint:fix": "npm run lint -- --fix",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run build"
   },
   "dependencies": {
+    "buble": "^0.15.2",
     "underscore": "^1.8.3"
   },
   "devDependencies": {
