@@ -19,7 +19,7 @@
     "lint": "eslint . --max-warnings=10",
     "lint:fix": "npm run lint -- --fix",
     "test": "jest",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "buble": "^0.15.2",
